@@ -16,7 +16,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         LocalDateTime start = LocalDateTime.now();
         // читаємо вміст файлу
-        String content = new String(Files.readAllBytes(Paths.get("C:\\Users\\dima1\\OneDrive\\Рабочий стол\\encryption.txt")));
+        String content = new String(Files.readAllBytes(Paths.get("encryption.txt")));
 
         // очищуємо текст від небуквених символів та перетворюємо його в нижній регістр
         content = content.replaceAll("[^A-Za-z ]", " ").toLowerCase(Locale.ROOT);
@@ -38,7 +38,7 @@ public class Main {
         String encryptedText = encryptText(content, key);
 
         // Запис зашифрованого тексту у файл
-        BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\dima1\\OneDrive\\Рабочий стол\\encrypted_output.txt"));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("encrypted_output.txt"));
         writer.write(encryptedText);
         writer.close();
     }
